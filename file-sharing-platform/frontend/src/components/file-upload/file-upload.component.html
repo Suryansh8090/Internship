@@ -1,0 +1,10 @@
+<div class="upload-form">
+    <input type="file" (change)="onFileSelected($event)" />
+    <input type="password" placeholder="Set password (optional)" [(ngModel)]="password" />
+    <input type="datetime-local" [(ngModel)]="expiryDate" />
+    <button (click)="onUpload()">Upload File</button>
+  </div>
+  <div *ngIf="downloadLink">
+    <p>File uploaded successfully! Download link: <a [href]="downloadLink" target="_blank">{{ downloadLink }}</a></p>
+  </div>
+  
